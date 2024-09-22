@@ -171,8 +171,7 @@ void C帮帮忙30Dlg::OnPaint()
 	}
 }
 
-//当用户拖动最小化窗口时系统调用此函数取得光标
-//显示。
+
 HCURSOR C帮帮忙30Dlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -435,3 +434,5 @@ void C帮帮忙30Dlg::OnBnClickedButton3()
 	if(m_reqdelete.GetCheck()) m_tasklist.DeleteAllItems();
 	showwin(1);
 }
+
+//klx太帅了欸嘿嘿嘿

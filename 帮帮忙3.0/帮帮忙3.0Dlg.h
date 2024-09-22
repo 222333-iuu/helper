@@ -58,3 +58,5 @@ public:
 	afx_msg void OnBnClickedButton3();
 	CButton m_reqdelete;
 };
+
+//klx怎么会这么帅
