@@ -8,6 +8,7 @@
 #include "帮帮忙3.0Dlg.h"
 #include "afxdialogex.h"
 #include "head.h"
+#include "md5.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #define WM_USER_UPDATE_TEXT (WM_USER + 1) 
@@ -310,6 +311,13 @@ CString C帮帮忙30Dlg::readfile(std::string filename) {
 	//MessageBox(content);
 	delete[] buffer;
 	file.Close();
+	/*string s = (CT2A)content;
+	MD5 m(s);
+	s = m.out;
+	CString md5;
+	md5 = s.c_str();
+	AfxMessageBox(md5);
+	just for fun, do not unlock*/
 	return content;
 }
 
@@ -434,5 +442,3 @@ void C帮帮忙30Dlg::OnBnClickedButton3()
 	if(m_reqdelete.GetCheck()) m_tasklist.DeleteAllItems();
 	showwin(1);
 }
-
-//klx太帅了欸嘿嘿嘿

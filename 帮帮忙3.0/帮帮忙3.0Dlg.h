@@ -59,5 +59,4 @@ public:
 	CButton m_reqdelete;
 };
 
-//klx怎么会这么帅
-//666666
+
