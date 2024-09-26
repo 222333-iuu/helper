@@ -87,6 +87,7 @@ BEGIN_MESSAGE_MAP(C帮帮忙30Dlg, CDialogEx)
 	ON_NOTIFY(NM_CLICK, IDC_LIST1, &C帮帮忙30Dlg::OnNMClickList1)
 	ON_NOTIFY(NM_DBLCLK, IDC_LIST1, &C帮帮忙30Dlg::OnNMDblclkList1)
 	ON_BN_CLICKED(IDC_BUTTON3, &C帮帮忙30Dlg::OnBnClickedButton3)
+	ON_BN_CLICKED(IDC_BUTTON5, &C帮帮忙30Dlg::OnBnClickedButton5)
 END_MESSAGE_MAP()
 
 
@@ -311,13 +312,7 @@ CString C帮帮忙30Dlg::readfile(std::string filename) {
 	//MessageBox(content);
 	delete[] buffer;
 	file.Close();
-	/*string s = (CT2A)content;
-	MD5 m(s);
-	s = m.out;
-	CString md5;
-	md5 = s.c_str();
-	AfxMessageBox(md5);
-	just for fun, do not unlock*/
+
 	return content;
 }
 
@@ -441,4 +436,22 @@ void C帮帮忙30Dlg::OnBnClickedButton3()
 	}
 	if(m_reqdelete.GetCheck()) m_tasklist.DeleteAllItems();
 	showwin(1);
+}
+
+
+void C帮帮忙30Dlg::OnBnClickedButton5()
+{
+	std::string filepath = SelFile(1);
+	if (filepath == "") return;
+	CString filecontent = readfile(filepath);
+	string s = (CT2A)filecontent;
+	MD5 m(s);
+	FUNC a(1, 1);
+	s = a.printtime() + "md5码为:" + m.out + "\t文件:" + filepath;
+	UpdateData(true);
+	m_log = TEXT("\r\n") + m_log;
+	CString k;
+	k = s.c_str();
+	m_log = k + m_log;
+	UpdateData(false);
 }

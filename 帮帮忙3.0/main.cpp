@@ -264,8 +264,6 @@ void FUNC::record() {
 
 void FUNC::editlog(string tar) {
     if(tar != "/clear")tar = printtime() + tar;
-    //MD5 m(tar);
-    //tar = tar + m.out;
     CString ctar(tar.c_str());
     BSTR bstrText = ctar.AllocSysString(); // ·ÖÅäÒ»¸öBSTR×Ö·û´®  
     theApp.GetMainWnd()->PostMessage(WM_USER_UPDATE_TEXT, 0, reinterpret_cast<LPARAM>(bstrText));

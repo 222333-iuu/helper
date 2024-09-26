@@ -57,6 +57,7 @@ public:
 	bool isnum(CString text);
 	afx_msg void OnBnClickedButton3();
 	CButton m_reqdelete;
+	afx_msg void OnBnClickedButton5();
 };
 
 
