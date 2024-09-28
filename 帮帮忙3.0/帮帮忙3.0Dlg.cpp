@@ -454,4 +454,4 @@ void C帮帮忙30Dlg::OnBnClickedButton5()
 	k = s.c_str();
 	m_log = k + m_log;
 	UpdateData(false);
-}
+}//生成MD5码
